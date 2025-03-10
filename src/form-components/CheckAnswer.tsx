@@ -24,6 +24,7 @@ export function CheckAnswer({
                     onChange={updateAnswer}
                 />
             </Form.Group>
+            {/* display one or the other */}
             {answer === expectedAnswer && <span>✔️</span>}
             {answer !== expectedAnswer && <span>❌</span>}
         </div>
