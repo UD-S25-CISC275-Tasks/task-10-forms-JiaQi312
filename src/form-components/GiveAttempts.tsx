@@ -22,9 +22,9 @@ export function GiveAttempts(): React.JSX.Element {
                 <Form.Control
                     type="number"
                     value={attemptsRequested}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setAttemptsRequested(event.target.value)
-                    }
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setAttemptsRequested(event.target.value);
+                    }}
                 />
             </Form.Group>
             <span> attempts left: {attemptsLeft} </span>
