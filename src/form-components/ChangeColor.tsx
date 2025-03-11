@@ -30,24 +30,30 @@ export function ChangeColor(): React.JSX.Element {
         <div>
             <h3>Change Color</h3>
             {/* map method to create button for each color, which runs updateColor on click */}
-            {COLORS.map(
-                (currColor: string) =>
-                    (
-                        <Form.Check
-                            type="radio"
-                            name="colorSelect"
-                            onChange={updateColor}
-                            id={currColor}
-                            key={currColor}
-                            value={currColor}
-                            checked={color === currColor}
-                        />
-                    ) + currColor,
-            )}
+            <div>
+                {COLORS.map((currColor: string) => (
+                    <Form.Check
+                        //makes each radio button on one line
+                        inline
+                        type="radio"
+                        name="colorSelect"
+                        onChange={updateColor}
+                        id={"choose " + currColor}
+                        //label dictates the text written beside each radio button
+                        label=<span style={{ backgroundColor: currColor }}>
+                            {currColor}
+                        </span>
+                        key={currColor}
+                        value={currColor}
+                        checked={color === currColor}
+                    />
+                ))}
+            </div>
             {/* text to display the final color */}
             {
                 <span>
-                    You have chosen + " "
+                    {/* {} is for extra space */}
+                    You have chosen {}
                     <span data-testid="colored-box" style={boxStyle}>
                         {color}
                     </span>
